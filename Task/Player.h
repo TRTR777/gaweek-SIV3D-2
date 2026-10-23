@@ -41,9 +41,9 @@ private:
 
 	bool onCharging = false;//チャージ中かどうか
 
-	double chargeTime = 2;//チャージ時間
+	double chargeTime = 0.5;//チャージ時間
 	double chargeTimer = 0;//チャージ経過時間	
-	double rapidFireRate = 0.3; // 連射の発射間隔
+	double rapidFireRate = 0.2; // 連射の発射間隔
 	double rapidFireTimer = 0; // 連射のタイマー
 
 };

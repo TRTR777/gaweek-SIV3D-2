@@ -25,7 +25,7 @@ private:
 	
 	double bulletSpeed = 2000;//弾の速さ
 	double bulletDet = 5;//弾の大きさ
-	double chargeBullet = 1800;//チャージ弾の速さ
+	double chargeBullet = 3000;//チャージ弾の速さ
 	double sizeB = 0.7;//弾の描写サイズ
 
 };

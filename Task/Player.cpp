@@ -79,12 +79,11 @@ void Player::Update()
 
 		if(onCharging&&MouseL.pressed()&&!MouseR.pressed())//マウス右クリックを押している間チャージしない
 		{
-			chargeTimer += deltaTime;
+			chargeTimer+= deltaTime;
 		}
 
 		if(onCharging&&MouseL.up())//マウス左クリックを離したら弾発射
 		{
-			Print << U"114514";
 			if (chargeTimer >= chargeTime)//チャージ弾
 			{
 				Print << U"チャージ攻撃";
@@ -96,11 +95,7 @@ void Player::Update()
 				Print << U"攻撃";
 				bullets << Bullet{ playerPos + bulletLaunchPos};
 			}
-		}
-		
 
-		else//マウス左クリックを押していない場合はタイマーリセット
-		{
 			onCharging = false;
 			chargeTimer = timerReset;
 		}
