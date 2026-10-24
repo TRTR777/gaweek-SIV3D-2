@@ -86,13 +86,13 @@ void Player::Update()
 		{
 			if (chargeTimer >= chargeTime)//チャージ弾
 			{
-				Print << U"チャージ攻撃";
+				
 				bullets << Bullet{playerPos + bulletLaunchPos, true};
 			}
 
 			else//通常弾
 			{
-				Print << U"攻撃";
+				
 				bullets << Bullet{ playerPos + bulletLaunchPos};
 			}
 
