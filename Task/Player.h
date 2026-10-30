@@ -2,6 +2,7 @@
 #include <Siv3D.hpp>
 #include"Bullet.h"	
 #include"Enemy.h"
+#include "Difficulty.h"
 
 class Player
 {
@@ -13,11 +14,16 @@ public:
 	Vec2 GetplayerPos()const;
 	double GetplayerDet()const;
 
+	Player(Difficulty difficulty);
 
 private:
 
-	Texture playerImage{ U"Image/Player.png" };
-	double sizeP = 0.11;//画像の大きさ
+	Texture playerImage;
+	Texture playerT1Image{ U"Image/PlayerT1.png" };
+	Texture playerT2Image{ U"Image/PlayerT2.png" };
+
+	double sizeP1 = 0.11;//画像の大きさ
+	double sizeP2 = 0.11;//画像の大きさ
 
 	Vec2  playerPos{ 150,360 };//プレイヤーの位置
 	Vec2  Coordinates{0,0 };//移動用

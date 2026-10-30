@@ -9,7 +9,7 @@ void Main()
 	Window::Resize(1280, 720);
 	
 
-	Player Player;
+	Player Player{ Difficulty::Easy};
 
 	while (System::Update())
 	{

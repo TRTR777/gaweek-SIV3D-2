@@ -26,7 +26,7 @@ void Bullet::Draw()const
 {
 	if (onChargeBullet)//チャージ弾の描画
 	{
-		bulletT2.scaled(sizeB).drawAt(bulletPos);
+		bulletT2.scaled(sizeBC).drawAt(bulletPos);
 	}
 
 	else//通常弾の描画

@@ -109,9 +109,9 @@ void Player::Update()
 
 void Player::Draw()const
 {
-	playerImage.scaled(sizeP).drawAt(playerPos);//プレイヤーの描画
 
-
+	playerImage.scaled(sizeP1).drawAt(playerPos);//プレイヤーの描画
+	
 	for (const auto& bullet : bullets)//弾の描画
 	{
 		bullet.Draw();
@@ -127,4 +127,22 @@ Vec2 Player::GetplayerPos()const
 double Player::GetplayerDet()const
 {
 	return playerDet;
+}
+
+Player::Player(Difficulty difficulty)//難易度によって見た画像変更
+{
+	switch (difficulty)
+	{
+	case Difficulty::Easy:
+		playerImage= playerT2Image;
+		break;
+
+	case Difficulty::Normal:
+		playerImage= playerT1Image;
+		break;
+
+	case Difficulty::Hard:
+		playerImage= playerT1Image;
+		break;
+	}
 }
