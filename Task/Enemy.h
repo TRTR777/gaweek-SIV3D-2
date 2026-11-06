@@ -25,8 +25,14 @@ private:
 	int maxHealth=100;
 	int onHealth=100;
 
-	double bossDet = 100;
+	static constexpr double minHealth = 0;
+	static constexpr double Reset = 0;
+
+	double bossDet = 100;//
 	double sizeBoosT1 = 0.4;//ボスサイズ
 	double sizeBoosT2 = 0.4;//2体目のボスサイズ
+
+	bool BossType1=true;
+	bool BossType2=false;
 };
 

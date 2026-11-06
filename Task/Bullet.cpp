@@ -35,6 +35,23 @@ void Bullet::Draw()const
 	}
 }
 
+RectF Bullet::GetCollision() const
+{
+	Vec2 imageSize;
+
+	//弾のあたり判定を画像のサイズに合わせる
+	if (onChargeBullet)
+	{
+		imageSize = bulletT2.size() * sizeBC;
+	}
+
+	else
+	{
+		imageSize = bulletT1.size() * sizeB;
+	}
+
+	return RectF{ bulletPos.x - imageSize.x / Division,bulletPos.y - imageSize.y / Division,imageSize.x,imageSize.y };
+}
 
 double Bullet::GetbulletDet() const
 {

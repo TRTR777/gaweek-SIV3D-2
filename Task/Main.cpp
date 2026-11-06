@@ -8,15 +8,14 @@ void Main()
 {
 	Window::Resize(1280, 720);
 	
-
-	Player Player{ Difficulty::Easy};
+	
+	Game game;
+	
 
 	while (System::Update())
 	{
-		Player.Update();
-		Player.Draw();
-
-
+		game.Update();
+		game.Draw();
 	}
 }
 

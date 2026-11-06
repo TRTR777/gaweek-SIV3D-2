@@ -133,6 +133,7 @@ Player::Player(Difficulty difficulty)//難易度によって見た画像変更
 {
 	switch (difficulty)
 	{
+
 	case Difficulty::Easy:
 		playerImage= playerT2Image;
 		break;

@@ -16,6 +16,12 @@ public:
 
 	Player(Difficulty difficulty);
 
+	// 弾の配列を取得
+	Array<Bullet>& GetBullets()
+	{
+		return bullets;
+	}
+
 private:
 
 	Texture playerImage;
@@ -38,8 +44,6 @@ private:
 	static constexpr double moveDirPlus = 1;
 	
 	
-
-
 	//{Bullet関連}
 	Array<Bullet> bullets;//弾の配列
 	static constexpr double timerReset = 0;
