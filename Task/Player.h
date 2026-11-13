@@ -22,14 +22,23 @@ public:
 		return bullets;
 	}
 
+
+	//体力関連
+	int GetCurretLife()const;
+	int GetMaxLife()const;
+
+	void TakeDamage();
+	bool IsDead();
+
 private:
 
 	Texture playerImage;
 	Texture playerT1Image{ U"Image/PlayerT1.png" };
 	Texture playerT2Image{ U"Image/PlayerT2.png" };
+	Texture lifeImage{ U"Image/Life.png" };
 
-	double sizeP1 = 0.11;//画像の大きさ
-	double sizeP2 = 0.11;//画像の大きさ
+	double sizeP1 = 0.07;//画像の大きさ
+	double sizeP2 = 0.07;//画像の大きさ
 
 	Vec2  playerPos{ 150,360 };//プレイヤーの位置
 	Vec2  Coordinates{0,0 };//移動用
@@ -37,6 +46,17 @@ private:
 	double playerSpeed = 500;//プレイヤースピード
 	double playerDet = 50;//プレイヤーあたり判定
 
+	//体力設定
+	static constexpr int MaxLife = 3;
+	int currentLife = MaxLife;
+
+	// ライフ表示設定
+	static constexpr double LifePosX = 30.0;
+	static constexpr double LifePosY = 30.0;
+	static constexpr double LifeReset = 0;
+
+	static constexpr double  LifeSize = 40.0;
+	static constexpr double  LifeSpacing = 10.0;
 
 	//{移動方向定数}
 	static constexpr double moveDirNo = 0;
@@ -47,7 +67,7 @@ private:
 	//{Bullet関連}
 	Array<Bullet> bullets;//弾の配列
 	static constexpr double timerReset = 0;
-	Vec2 bulletLaunchPos{ 200,20};//弾の発射位置
+	Vec2 bulletLaunchPos{ 100,0};//弾の発射位置
 
 	bool onCharging = false;//チャージ中かどうか
 

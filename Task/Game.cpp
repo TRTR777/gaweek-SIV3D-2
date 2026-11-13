@@ -18,6 +18,8 @@ void Game::Update()
 		enemy.Update();
 	}
 
+	CheckCollision();
+
 	// HPが0になった敵を削除
 	enemies.remove_if([](const Enemy& enemy)
 	{

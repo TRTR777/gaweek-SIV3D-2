@@ -8,8 +8,6 @@ public:
 	void Update();
 	void Draw()const;
 
-	double GetbulletDet()const;
-
 	RectF GetCollision() const;
 
 	Bullet(Vec2 launchPos,  bool charge=false);//弾発射受け取り
@@ -36,14 +34,12 @@ private:
 	bool onChargeBullet = false;// チャージ弾かどうか
 
 	static constexpr double Division = 2.0;//当たり判定計算用
-	
+	static constexpr double ReductionMag= 0.8;//縮小倍率
 
-	double bulletSpeed = 2000;//弾の速さ
-	double bulletDet = 5;//弾の大きさ
-	double chargeBullet = 3000;//チャージ弾の速さ
-	double sizeB = 0.15;//弾の描写サイズ
-	double sizeBC = 0.3;//チャージ弾の描写サイズ
-
+	double bulletSpeed = 1000;//弾の速さ
+	double chargeBullet = 2000;//チャージ弾の速さ
+	double sizeB = 0.09;//弾の描写サイズ
+	double sizeBC = 0.2;//チャージ弾の描写サイズ
 
 	bool onDead = false;//
 

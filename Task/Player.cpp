@@ -116,6 +116,17 @@ void Player::Draw()const
 	{
 		bullet.Draw();
 	}
+
+	// ライフ画像表示
+	for (int i = LifeReset; i < MaxLife; i++)
+	{
+		const double x = LifePosX + i * (LifeSize + LifeSpacing);
+
+		if (i < currentLife)
+		{
+			lifeImage.resized(LifeSize).draw(x, LifePosY);
+		}
+	}
 }
 
 
@@ -146,4 +157,30 @@ Player::Player(Difficulty difficulty)//難易度によって見た画像変更
 		playerImage= playerT1Image;
 		break;
 	}
+}
+
+//体力関連
+
+int Player::GetCurretLife() const
+{
+	return currentLife;
+}
+
+int Player::GetMaxLife() const
+{
+	return MaxLife;
+}
+
+void Player::TakeDamage()
+{
+	if (IsDead())
+	{
+		return;
+	}
+	currentLife--;
+}
+
+bool Player::IsDead()
+{
+	return currentLife<=0;
 }

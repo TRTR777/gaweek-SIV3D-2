@@ -6,7 +6,7 @@
 
 void Main()
 {
-	Window::Resize(1280, 720);
+	Window::Resize(1920, 1080);
 	
 	
 	Game game;

@@ -33,6 +33,9 @@ void Bullet::Draw()const
 	{
 		bulletT1.scaled(sizeB).drawAt(bulletPos);
 	}
+
+	// 当たり判定を表示（デバッグ用）
+	GetCollision().drawFrame(1.0, Palette::Green);
 }
 
 RectF Bullet::GetCollision() const
@@ -50,10 +53,10 @@ RectF Bullet::GetCollision() const
 		imageSize = bulletT1.size() * sizeB;
 	}
 
+	imageSize *= ReductionMag;
+	
+
 	return RectF{ bulletPos.x - imageSize.x / Division,bulletPos.y - imageSize.y / Division,imageSize.x,imageSize.y };
 }
 
-double Bullet::GetbulletDet() const
-{
-	return bulletDet;
-}
+

@@ -7,7 +7,18 @@ void Enemy::Update()
 
 void Enemy::Draw()const
 {
-	BossT1.scaled(sizeBoosT1).drawAt(bossPos);
+	if (BossType1)
+	{
+		BossT1.scaled(sizeBoosT1).drawAt(bossPos);
+	}
+
+	else if(BossType2)
+	{
+		BossT2.scaled(sizeBoosT2).drawAt(bossPos);
+	}
+
+	// 当たり判定を表示（デバッグ用）
+	GetCollision().drawFrame(1.0, Palette::Red);
 }
 
 void Enemy::onDamage(int damage)
